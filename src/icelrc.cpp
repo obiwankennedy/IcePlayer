@@ -9,10 +9,7 @@ ICE_Lrc::ICE_Lrc(QWidget *parent /* = 0 */)
 	setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint);
 	//去除窗体原背景
 	setAttribute(Qt::WA_TranslucentBackground);
-	//窗口拖动
-	QWidgetResizeHandler *movewin = new QWidgetResizeHandler(this);
-	movewin->setMovingEnabled(true);
-	//固定大小
+
 	this->setFixedSize(800, 80);
 
 	lrcLabel = new ICE_Lrc_Label(this);

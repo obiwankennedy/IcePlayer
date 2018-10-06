@@ -31,10 +31,10 @@ void IcePlayer::ice_init_windows()
 
 void IcePlayer::ice_init_menu_actions()
 {
-	modeSingal = new QAction(QString::fromLocal8Bit("单曲播放"), this);
-	modeListCircle = new QAction(QString::fromLocal8Bit("列表循环"), this);
-	modeSingalCircle = new QAction(QString::fromLocal8Bit("单曲循环"), this);
-	modeRandom = new QAction(QString::fromLocal8Bit("随机播放"), this);
+    modeSingal = new QAction(QString::fromLocal8Bit("Single"), this);
+    modeListCircle = new QAction(QString::fromLocal8Bit("Repeat List"), this);
+    modeSingalCircle = new QAction(QString::fromLocal8Bit("Repeat Single"), this);
+    modeRandom = new QAction(QString::fromLocal8Bit("Random"), this);
 
 	connect(modeSingal, SIGNAL(triggered()), this, SLOT(ice_set_play_mode()));
 	connect(modeListCircle, SIGNAL(triggered()), this, SLOT(ice_set_play_mode()));
@@ -149,7 +149,7 @@ void IcePlayer::ice_init_ui()
 	picLabel = new QLabel( this);
 	picLabel->setGeometry(QRect(40, 45, 100, 100));
 	picLabel->setScaledContents(true);
-	picLabel->setPixmap(QPixmap(":/IcePlayer/Resources/default_album.jpg"));
+    picLabel->setPixmap(QPixmap(":/IcePlayer/resources/images/default_album.jpg"));
 	
 	nameLabel = new IceLabel(this);
 	nameLabel->setGeometry(QRect(150, 55, 220, 20));
@@ -241,8 +241,8 @@ void IcePlayer::ice_init_ui()
 
 	//设置图标
 	QIcon icon_play, icon_play_focus;
-	icon_play.addFile(QStringLiteral(":/IcePlayer/Resources/播放按钮-主界面.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_play_focus.addFile(QStringLiteral(":/IcePlayer/Resources/播放按钮-主界面2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_play.addFile(QStringLiteral(":/IcePlayer/resources/images/playbig.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_play_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/playbig2.png"), QSize(), QIcon::Normal, QIcon::Off);
 	playButton->ICE_Set_Button_Icons(icon_play, icon_play_focus);
 	playButton->setIconSize(QSize(60,60));
 	playButton->setFlat(true);
@@ -250,8 +250,8 @@ void IcePlayer::ice_init_ui()
 	playButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 
 	QIcon icon_pause, icon_pause_focus;
-	icon_pause.addFile(QStringLiteral(":/IcePlayer/Resources/暂停按钮-主界面.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_pause_focus.addFile(QStringLiteral(":/IcePlayer/Resources/暂停按钮-主界面2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_pause.addFile(QStringLiteral(":/IcePlayer/resources/images/bigcircle.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_pause_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/bigcircle2.png"), QSize(), QIcon::Normal, QIcon::Off);
 	pauseButton->ICE_Set_Button_Icons(icon_pause, icon_pause_focus);
 	pauseButton->setIconSize(QSize(60,60));
 	pauseButton->setFlat(true);
@@ -260,8 +260,8 @@ void IcePlayer::ice_init_ui()
 
 
 	QIcon icon_lyric, icon_lyric_focus;
-	icon_lyric.addFile(QStringLiteral(":/IcePlayer/Resources/歌词按钮.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_lyric_focus.addFile(QStringLiteral(":/IcePlayer/Resources/歌词按钮2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_lyric.addFile(QStringLiteral(":/IcePlayer/resources/images/newfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_lyric_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/newfile2.png"), QSize(), QIcon::Normal, QIcon::Off);
 	lyricButton->ICE_Set_Button_Icons(icon_lyric, icon_lyric_focus);
 	lyricButton->setIconSize(QSize(25,25));
 	lyricButton->setFlat(true);
@@ -269,8 +269,8 @@ void IcePlayer::ice_init_ui()
 	lyricButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 
 	QIcon icon_exit, icon_exit_focus;
-	icon_exit.addFile(QStringLiteral(":/IcePlayer/Resources/关闭按钮.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_exit_focus.addFile(QStringLiteral(":/IcePlayer/Resources/关闭按钮2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_exit.addFile(QStringLiteral(":/IcePlayer/resources/images/cross.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_exit_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/cross2.png"), QSize(), QIcon::Normal, QIcon::Off);
 	exitButton->ICE_Set_Button_Icons(icon_exit, icon_exit_focus);
 	exitButton->setIconSize(QSize(20,20));
 	exitButton->setFlat(true);
@@ -278,8 +278,8 @@ void IcePlayer::ice_init_ui()
 	exitButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 
 	QIcon icon_min, icon_min_focus;
-	icon_min.addFile(QStringLiteral(":/IcePlayer/Resources/迷你模式按钮.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_min_focus.addFile(QStringLiteral(":/IcePlayer/Resources/迷你模式按钮2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_min.addFile(QStringLiteral(":/IcePlayer/resources/images/infobubble.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_min_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/infobubble2.png"), QSize(), QIcon::Normal, QIcon::Off);
 	minButton->ICE_Set_Button_Icons(icon_min, icon_min_focus);
 	minButton->setIconSize(QSize(20,20));
 	minButton->setFlat(true);
@@ -287,8 +287,8 @@ void IcePlayer::ice_init_ui()
 	minButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 
 	QIcon icon_mmin, icon_mmin_focus;
-	icon_mmin.addFile(QStringLiteral(":/IcePlayer/Resources/缩小按钮.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_mmin_focus.addFile(QStringLiteral(":/IcePlayer/Resources/缩小按钮2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_mmin.addFile(QStringLiteral(":/IcePlayer/resources/images/line.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_mmin_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/line2.png"), QSize(), QIcon::Normal, QIcon::Off);
 	mminButton->ICE_Set_Button_Icons(icon_mmin, icon_mmin_focus);
 	mminButton->setIconSize(QSize(20,20));
 	mminButton->setFlat(true);
@@ -296,8 +296,8 @@ void IcePlayer::ice_init_ui()
 	mminButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 
 	QIcon icon_logo, icon_logo_focus;
-	icon_logo.addFile(QStringLiteral(":/IcePlayer/Resources/左上角logo按钮.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_logo_focus.addFile(QStringLiteral(":/IcePlayer/Resources/左上角logo按钮2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_logo.addFile(QStringLiteral(":/IcePlayer/resources/images/logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_logo_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/logo2.png"), QSize(), QIcon::Normal, QIcon::Off);
 	logoButton->ICE_Set_Button_Icons(icon_logo, icon_logo_focus);
 	logoButton->setIconSize(QSize(120, 48));
 	logoButton->setFlat(true);
@@ -305,8 +305,8 @@ void IcePlayer::ice_init_ui()
 	logoButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 
 	QIcon icon_next, icon_next_focus;
-	icon_next.addFile(QStringLiteral(":/IcePlayer/Resources/下一曲.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_next_focus.addFile(QStringLiteral(":/IcePlayer/Resources/下一曲2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_next.addFile(QStringLiteral(":/IcePlayer/resources/images/rightarrow.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_next_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/rightarrow2.png"), QSize(), QIcon::Normal, QIcon::Off);
 	nextButton->ICE_Set_Button_Icons(icon_next, icon_next_focus);
 	nextButton->setIconSize(QSize(40,40));
 	nextButton->setFlat(true);
@@ -314,8 +314,9 @@ void IcePlayer::ice_init_ui()
 	nextButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 
 	QIcon icon_last, icon_last_focus;
-	icon_last.addFile(QStringLiteral(":/IcePlayer/Resources/上一曲.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_last_focus.addFile(QStringLiteral(":/IcePlayer/Resources/上一曲2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_last.addFile(QStringLiteral(":/IcePlayer/resources/images/leftarrow.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_last_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/arrowleft2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    // Previous button, not last.
 	lastButton->ICE_Set_Button_Icons(icon_last, icon_last_focus);
 	lastButton->setIconSize(QSize(40,40));
 	lastButton->setFlat(true);
@@ -323,8 +324,8 @@ void IcePlayer::ice_init_ui()
 	lastButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 
 	QIcon icon_mode, icon_mode_focus;
-	icon_mode.addFile(QStringLiteral(":/IcePlayer/Resources/播放模式.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_mode_focus.addFile(QStringLiteral(":/IcePlayer/Resources/播放模式2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_mode.addFile(QStringLiteral(":/IcePlayer/resources/images/switch.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_mode_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/switch2.png"), QSize(), QIcon::Normal, QIcon::Off);
 	modeButton->ICE_Set_Button_Icons(icon_mode, icon_mode_focus);
 	modeButton->setIconSize(QSize(25,25));
 	modeButton->setFlat(true);
@@ -332,8 +333,8 @@ void IcePlayer::ice_init_ui()
 	modeButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 	
 	QIcon icon_add, icon_add_focus;
-	icon_add.addFile(QStringLiteral(":/IcePlayer/Resources/添加歌曲.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_add_focus.addFile(QStringLiteral(":/IcePlayer/Resources/添加歌曲2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_add.addFile(QStringLiteral(":/IcePlayer/resources/images/grid.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_add_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/grid2.png"), QSize(), QIcon::Normal, QIcon::Off);
 	addButton->ICE_Set_Button_Icons(icon_add, icon_add_focus);
 	addButton->setIconSize(QSize(25,25));
 	addButton->setFlat(true);
@@ -341,13 +342,11 @@ void IcePlayer::ice_init_ui()
 	addButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 
 	//去除标题栏
-	this->setWindowFlags(Qt::FramelessWindowHint);
+    //this->setWindowFlags(Qt::FramelessWindowHint);
 	//半透明
 	this->setWindowOpacity(0.9);
 	setAttribute(Qt::WA_TranslucentBackground);
-	//窗口拖动
-	QWidgetResizeHandler *movewin = new QWidgetResizeHandler(this);
-	movewin->setMovingEnabled(true);
+
 	//固定大小
 	this->setFixedSize(400, 600);
 
@@ -449,7 +448,7 @@ void IcePlayer::dragEnterEvent(QDragEnterEvent *event)
 void IcePlayer::paintEvent(QPaintEvent *event)
 {
 	QPainter p(this);
-	p.drawPixmap(0, 0 , QPixmap(":/IcePlayer/Resources/background.png"));
+    p.drawPixmap(0, 0 , QPixmap(":/IcePlayer/resources/images/background.png"));
 }
 
 void IcePlayer::ice_playlisttable_cell_double_clicked(int row, int ) 
@@ -629,7 +628,7 @@ void IcePlayer::ice_update_meta_data()
 	songName.clear();
 	songArtist.clear();
 	lrcMap.clear();
-	picLabel->setPixmap(QPixmap(":/IcePlayer/Resources/default_album.jpg"));
+    picLabel->setPixmap(QPixmap(":/IcePlayer/resources/images/default_album.jpg"));
 
 
 	songName = mediaPlayer->metaData(QMediaMetaData::Title).toString();
@@ -864,8 +863,10 @@ bool IcePlayer::ice_resolve_lrc(const QString &source_file_name)
 		}
 	}
 	// 如果lrc_map为空
-	if (lrcMap.isEmpty()) {
-		iceLrc->setText(mediaPlayer->metaData(QMediaMetaData::Title).toString());
+    if (lrcMap.isEmpty())
+    {
+        auto text = mediaPlayer->metaData(QMediaMetaData::Title).toString();
+        iceLrc->setText(text);
 		return false;
 	}
 

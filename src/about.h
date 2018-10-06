@@ -4,7 +4,7 @@
 #include <QDialog>
 //#include <QFrame>
 
-class iceButton;
+class ICE_Ice_Button;
 
 class about : public QDialog
 {
@@ -16,11 +16,8 @@ public:
 private slots:
 	
 private:
-	iceButton *exitButton;
-
-	void paintEvent(QPaintEvent *event); //用窗口绘制事件来绘制背景图片
-
-
+    ICE_Ice_Button *exitButton;
+    void paintEvent(QPaintEvent *event);
 };
 
 

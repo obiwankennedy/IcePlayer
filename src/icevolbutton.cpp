@@ -23,8 +23,8 @@ ICE_Vol_Button::ICE_Vol_Button(QWidget *parent) :QWidget(parent)
 	button = new ICE_Ice_Button(this);
 
 	QIcon icon_button, icon_button_focus;
-	icon_button.addFile(QStringLiteral(":/IcePlayer/Resources/音量调节.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_button_focus.addFile(QStringLiteral(":/IcePlayer/Resources/音量调节2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_button.addFile(QStringLiteral(":/IcePlayer/resources/images/earphone.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_button_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/earphone2.png"), QSize(), QIcon::Normal, QIcon::Off);
 	button->ICE_Set_Button_Icons(icon_button, icon_button_focus);
 
 	button->setIconSize(QSize(25,25));

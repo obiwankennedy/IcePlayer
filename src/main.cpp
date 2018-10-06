@@ -3,6 +3,7 @@
 #include <QFileInfo>
 #include <QSettings>
 #include <QDir>
+#include <QQmlApplicationEngine>
 #include "single_application.h"
 
 static void associateFileTypes(const QStringList &fileTypes)
@@ -11,7 +12,8 @@ static void associateFileTypes(const QStringList &fileTypes)
 	QString filePath = QCoreApplication::applicationFilePath();
 	QString fileName = QFileInfo(filePath).fileName();
 
-	QSettings settings("HKEY_CURRENT_USER\\Software\\Classes\\Applications\\" + fileName, QSettings::NativeFormat);
+#if Q_OS_WINDOWS
+    QSettings settings("HKEY_CURRENT_USER\\Software\\Classes\\Applications\\" + fileName, QSettings::NativeFormat);
 	settings.setValue("FriendlyAppName", displayName);
 
 	settings.beginGroup("SupportedTypes");
@@ -24,6 +26,7 @@ static void associateFileTypes(const QStringList &fileTypes)
 	settings.setValue("FriendlyAppName", displayName);
 	settings.beginGroup("Command");
 	settings.setValue(".", QChar('"') + QDir::toNativeSeparators(filePath) + QString("\" \"%1\""));
+#endif
 }
 
 int main(int argc, char *argv[])
@@ -45,6 +48,10 @@ int main(int argc, char *argv[])
 
 	player->show();
 
+
+    // QML stuff
+    QQmlApplicationEngine* engine = new QQmlApplicationEngine(&app);
+    engine->load(QUrl("qrc:/resources/qml/main.qml"));
 	
 	return app.exec();
 }

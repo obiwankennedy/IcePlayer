@@ -1,0 +1,56 @@
+<RCC>
+    <qresource prefix="/IcePlayer">
+        <file>resources/images/background.png</file>
+        <file>resources/images/full.png</file>
+        <file>resources/images/logo-16.png</file>
+        <file>resources/images/logo-32.png</file>
+        <file>resources/images/logo-48.png</file>
+        <file>resources/images/lyric.png</file>
+        <file>resources/images/mini.png</file>
+        <file>resources/images/about.png</file>
+        <file>resources/images/default_album.jpg</file>
+        <file>resources/images/lrc_background.png</file>
+        <file>resources/images/about.png</file>
+        <file>resources/images/arrowleft2.png</file>
+        <file>resources/images/background.png</file>
+        <file>resources/images/bigcircle.png</file>
+        <file>resources/images/bigcircle2.png</file>
+        <file>resources/images/bubble.png</file>
+        <file>resources/images/cross.png</file>
+        <file>resources/images/cross2.png</file>
+        <file>resources/images/default_album.jpg</file>
+        <file>resources/images/earphone.png</file>
+        <file>resources/images/earphone2.png</file>
+        <file>resources/images/full.png</file>
+        <file>resources/images/grid.png</file>
+        <file>resources/images/grid2.png</file>
+        <file>resources/images/infobubble.png</file>
+        <file>resources/images/infobubble2.png</file>
+        <file>resources/images/leftarrow.png</file>
+        <file>resources/images/line.png</file>
+        <file>resources/images/line2.png</file>
+        <file>resources/images/logo.png</file>
+        <file>resources/images/logo2.png</file>
+        <file>resources/images/logo-16.png</file>
+        <file>resources/images/logo-32.png</file>
+        <file>resources/images/logo-48.png</file>
+        <file>resources/images/lrc_background.png</file>
+        <file>resources/images/lyric.png</file>
+        <file>resources/images/mini.png</file>
+        <file>resources/images/minicircle.png</file>
+        <file>resources/images/newfile.png</file>
+        <file>resources/images/newfile2.png</file>
+        <file>resources/images/playbig.png</file>
+        <file>resources/images/playbig2.png</file>
+        <file>resources/images/playmini.png</file>
+        <file>resources/images/rightarrow.png</file>
+        <file>resources/images/rightarrow2.png</file>
+        <file>resources/images/smallrightarrow.png</file>
+        <file>resources/images/switch.png</file>
+        <file>resources/images/switch2.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>resources/qml/main.qml</file>
+        <file>resources/qml/HoverButton.qml</file>
+    </qresource>
+</RCC>

@@ -3,7 +3,6 @@
 
 #include <QtGui> 
 #include <QPushButton>
-#include <qwidgetresizehandler_p.h>
 
 class ICE_Ice_Button : public QPushButton  
 {  

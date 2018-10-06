@@ -2,7 +2,6 @@
 #define MINI_H
 
 #include <QtWidgets>
-#include <qwidgetresizehandler_p.h>
 #include "iceButton.h"
 #include "iceplayer.h"
 

@@ -14,7 +14,6 @@
 #include <QMap>
 
 #include <QtWidgets>
-#include <qwidgetresizehandler_p.h>
 #include <QMediaPlaylist>
 #include <QMediaMetaData>
 #include <QMediaPlayer>
@@ -38,6 +37,7 @@ enum ICE_Play_Mode{SINGAL, LISTCIRCLE, SINGALCIRCLE, RANDOM};
 
 //网络音乐信息，专辑图片，歌词获取状态
 enum { RECEIVE_INFO, RECEIVE_LINK, RECEIVE_PIC, RECEIVE_LRC };
+class miniwindow;
 
 class IcePlayer : public QWidget
 {

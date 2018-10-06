@@ -8,8 +8,6 @@ miniwindow::miniwindow(QWidget *parent):QWidget(parent)
 	this->setWindowOpacity(0.9);
 
 	//窗口拖动
-	QWidgetResizeHandler *movewin = new QWidgetResizeHandler(this);
-	movewin->setMovingEnabled(true);
 
 	//固定大小
 	this->setFixedSize(100, 100);
@@ -29,8 +27,8 @@ miniwindow::miniwindow(QWidget *parent):QWidget(parent)
 
 	//设置图标
 	QIcon icon_play, icon_play_focus;
-	icon_play.addFile(QStringLiteral(":/IcePlayer/Resources/播放按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_play_focus.addFile(QStringLiteral(":/IcePlayer/Resources/播放按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
+//	icon_play.addFile(QStringLiteral(":/IcePlayer/Resources/播放按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
+//	icon_play_focus.addFile(QStringLiteral(":/IcePlayer/Resources/播放按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
 	playButton->ICE_Set_Button_Icons(icon_play, icon_play_focus);
 
 	playButton->setIconSize(QSize(34,34));
@@ -39,8 +37,8 @@ miniwindow::miniwindow(QWidget *parent):QWidget(parent)
 	playButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 
 	QIcon icon_pause, icon_pause_focus;
-	icon_pause.addFile(QStringLiteral(":/IcePlayer/Resources/暂停按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_pause_focus.addFile(QStringLiteral(":/IcePlayer/Resources/暂停按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
+//	icon_pause.addFile(QStringLiteral(":/IcePlayer/Resources/暂停按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
+//	icon_pause_focus.addFile(QStringLiteral(":/IcePlayer/Resources/暂停按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
 	pauseButton->ICE_Set_Button_Icons(icon_pause, icon_pause_focus);
 
 	pauseButton->setIconSize(QSize(34,34));
@@ -49,8 +47,8 @@ miniwindow::miniwindow(QWidget *parent):QWidget(parent)
 	pauseButton->setStyleSheet("QPushButton{background-color:rgba(255,255,255,0);border-style:solid;border-width:0px;border-color:rgba(255,255,255,0);}");
 
 	QIcon icon_next, icon_next_focus;
-	icon_next.addFile(QStringLiteral(":/IcePlayer/Resources/前进按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_next_focus.addFile(QStringLiteral(":/IcePlayer/Resources/前进按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
+//	icon_next.addFile(QStringLiteral(":/IcePlayer/Resources/前进按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
+//	icon_next_focus.addFile(QStringLiteral(":/IcePlayer/Resources/前进按钮mini.png"), QSize(), QIcon::Normal, QIcon::Off);
 	miniNextButton->ICE_Set_Button_Icons(icon_next, icon_next_focus);
 
 	miniNextButton->setIconSize(QSize(9,15));
@@ -93,17 +91,17 @@ void miniwindow::ice_init_menu_actions()
 	mode0->setChecked(true);
 
 
-	mainForm = new QAction(QString::fromLocal8Bit("返回主界面"),this);
-	exit = new QAction(QString::fromLocal8Bit("退出"),this);
-	next = new QAction(QString::fromLocal8Bit("下一曲"),this);
-	last = new QAction(QString::fromLocal8Bit("上一曲"),this);
-	lyric = new QAction(QString::fromLocal8Bit("桌面歌词"), this);
+    mainForm = new QAction(QString::fromLocal8Bit("mainForm"),this);
+    exit = new QAction(QString::fromLocal8Bit("quit"),this);
+    next = new QAction(QString::fromLocal8Bit("next"),this);
+    last = new QAction(QString::fromLocal8Bit("previous"),this);
+    lyric = new QAction(QString::fromLocal8Bit("Lyrics"), this);
 
 
 	volSlider = new QSlider(Qt::Horizontal, this);
 	volSlider->setRange(0, 100);
 	volSlider->setGeometry(QRect(26,0,75,25));
-	connect(volSlider, SIGNAL(valueChanged(int)), this, SIGNAL(volumeChanged(int)));
+//	connect(volSlider, SIGNAL(valueChanged(int)), this, SIGNAL(volumeChanged(int)));
 
 	volSlider->setStyleSheet("QSlider::groove:horizontal{border:0px;height:4px;}"  
 		"QSlider::sub-page:horizontal{background:#0096ff;}"  

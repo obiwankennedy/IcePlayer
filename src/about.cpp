@@ -2,7 +2,6 @@
 #include "iceButton.h"
 
 #include <QPushButton>
-#include <qwidgetresizehandler_p.h>
 #include <QIcon>
 #include <QPalette>
 #include <QPixmap>
@@ -11,13 +10,13 @@
 
 about::about(QWidget *parent /* = 0 */)
 {
-	exitButton = new iceButton(this);
+    exitButton = new ICE_Ice_Button(this);
 	exitButton->setObjectName(QStringLiteral("exitButton"));
 	exitButton->setGeometry(QRect(255, 12, 30, 30));
 	QIcon icon_exit, icon_exit_focus;
-	icon_exit.addFile(QStringLiteral(":/IcePlayer/Resources/关闭按钮.png"), QSize(), QIcon::Normal, QIcon::Off);
-	icon_exit_focus.addFile(QStringLiteral(":/IcePlayer/Resources/关闭按钮2.png"), QSize(), QIcon::Normal, QIcon::Off);
-	exitButton->SetButtonIcons(icon_exit, icon_exit_focus);
+    //icon_exit.addFile(QStringLiteral(":/IcePlayer/Resources/关闭按钮.png"), QSize(), QIcon::Normal, QIcon::Off);
+    //icon_exit_focus.addFile(QStringLiteral(":/IcePlayer/Resources/关闭按钮2.png"), QSize(), QIcon::Normal, QIcon::Off);
+    //exitButton->SetButtonIcons(icon_exit, icon_exit_focus);
 
 	exitButton->setIconSize(QSize(20,20));
 	exitButton->setFlat(true);
@@ -43,8 +42,6 @@ about::about(QWidget *parent /* = 0 */)
 	this->setWindowOpacity(0.9);
 
 	//窗口拖动
-	QWidgetResizeHandler *movewin = new QWidgetResizeHandler(this);
-	movewin->setMovingEnabled(true);
 
 	//固定大小
 	this->setFixedSize(300, 400);

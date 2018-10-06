@@ -2,7 +2,6 @@
 #define ICE_LRC_H
 
 #include <QtWidgets>
-#include <qwidgetresizehandler_p.h>
 #include "lyric.h"
 
 class ICE_Lrc : public QWidget{
@@ -12,10 +11,8 @@ public:
 	ICE_Lrc(QWidget *parent = 0);
 	~ICE_Lrc();
 
-	//©╙й╪╦Х╢йузуж
 	void ICE_Start_Lrc_Mask(qint64 intervaltime);
 
-	//мёж╧╦Х╢йузуж
 	void ICE_Stop_Lrc_Mask();
 
 	QString text() const;
