@@ -65,10 +65,10 @@ void IcePlayer::ice_init_menu_actions()
 
 	contextMenuLess = new QMenu(playlistTable);
 	contextMenuMore = new QMenu(playlistTable);
-	addMusic = new QAction(QString::fromLocal8Bit("添加歌曲"),this);
-	addFileDiv = new QAction(QString::fromLocal8Bit("添加目录"),this);
-	removeCurr = new QAction(QString::fromLocal8Bit("移除本曲"),this);
-	removeAll = new QAction(QString::fromLocal8Bit("移除所有"),this);
+    addMusic = new QAction(QString::fromLocal8Bit(""),this);
+    addFileDiv = new QAction(QString::fromLocal8Bit(""),this);
+    removeCurr = new QAction(QString::fromLocal8Bit(""),this);
+    removeAll = new QAction(QString::fromLocal8Bit(""),this);
 
 	connect(addMusic, SIGNAL(triggered()), this, SLOT(ice_open_music()));
 	connect(addFileDiv, SIGNAL(triggered()), this, SLOT(ice_open_dir()));
@@ -239,7 +239,7 @@ void IcePlayer::ice_init_ui()
 	musicianLabel->setText(tr("Musician" ));
 	albumLabel->setText(tr("Album" ));
 
-	//设置图标
+    //
 	QIcon icon_play, icon_play_focus;
     icon_play.addFile(QStringLiteral(":/IcePlayer/resources/images/playbig.png"), QSize(), QIcon::Normal, QIcon::Off);
     icon_play_focus.addFile(QStringLiteral(":/IcePlayer/resources/images/playbig2.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -350,7 +350,6 @@ void IcePlayer::ice_init_ui()
 	//固定大小
 	this->setFixedSize(400, 600);
 
-	//设置音乐信息字体颜色
 	QColor fontcolor(1, 149, 255);
 	QPalette fontPalette;
 	fontPalette.setColor(QPalette::WindowText, fontcolor);
@@ -1171,7 +1170,7 @@ void IcePlayer::ice_rece_pic(QNetworkReply *reply)
 		QImage image;
 		QBuffer buffer(&data);
 		buffer.open(QIODevice::WriteOnly);
-		image.save(&buffer, "JPG");//把图片以流方式写入文件缓存流中
+        image.save(&buffer, "JPG");//
 		file->write(data);
 		file->close();
 		delete file;
